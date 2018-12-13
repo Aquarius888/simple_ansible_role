@@ -1,8 +1,8 @@
 ---
 # defaults file for ca-role
 # default openssl variables
-#
-#
+
+
 # certificate CN
 cert_common_name: "Default certificate"
 

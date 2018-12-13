@@ -1,5 +1,5 @@
 galaxy_info:
-  role_name: openssl_ca_signer
+  role_name: ca-role 
   author: Pavel Alekseev
   description: create CA pair and self signed certificate
   company: mape 
