@@ -3,6 +3,10 @@
 
 ca-role
 
+## Description
+------------
+Simple Ansible role that generate root CA pair and create selfsigned certificate
+
 ## Requirements
 ------------
 
