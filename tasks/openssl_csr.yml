@@ -5,8 +5,9 @@
 
 
 - name: "Create private key"
-  local_action:
-          module: openssl_privatekey
+  # local_action:
+  # module: openssl_privatekey
+  openssl_privatekey:
           force: "{{ force_regeneration }}"
           mode: 0640
           path: "{{ cert_dir }}/{{ server_name }}_private.key"
@@ -15,8 +16,9 @@
           type: "RSA"
 
 - name: "Create CSR"
-  local_action:
-          module: openssl_csr
+  # local_action:
+  # module: openssl_csr
+  openssl_csr:
           common_name: "{{ server_url }}"
           country_name: "{{ cert_country }}"
           email_address: "{{ cert_email_address }}"

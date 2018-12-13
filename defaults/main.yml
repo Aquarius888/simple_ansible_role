@@ -34,7 +34,7 @@ cert_passphrase: "Show me what you got"
 server_name: my_server
 
 # overwrite existing certificate files
-force_regeneration: False 
+force_regeneration: True 
 
 
 

@@ -1,7 +1,8 @@
 # Check for directory to write out certs
 
 - name: "Check directory"
-  local_action:
-          module: file
-          path: "{{ cert_dir }}"
-          state: directory
+  #local_action:
+  # module: file
+  file:
+        path: "{{ cert_dir }}"
+        state: directory

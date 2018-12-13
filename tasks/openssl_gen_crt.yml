@@ -3,8 +3,9 @@
 # https://docs.ansible.com/ansible/latest/modules/openssl_certificate_module.html#openssl-certificate-module - module "openssl_certificate"
 
 - name: "Create certificate"
-  local_action:
-          module: openssl_certificate
+  # local_action:
+  # module: openssl_certificate
+  openssl_certificate:
           csr_path: "{{ cert_dir }}/{{ server_name }}.csr"
           force: "{{ force_regeneration }}"
           path: "{{ cert_dir }}/{{ server_name }}.crt"
