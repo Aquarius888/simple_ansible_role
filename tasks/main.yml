@@ -1,0 +1,9 @@
+---
+# tasks file for ca-role
+
+
+- include_tasks: check_dir.yml
+
+- include_tasks: openssl_csr.yml
+
+- include_tasks: openssl_gen_crt.yml

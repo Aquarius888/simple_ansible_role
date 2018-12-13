@@ -1,0 +1,42 @@
+---
+# defaults file for ca-role
+# default openssl variables
+#
+#
+# certificate CN
+cert_common_name: "Default certificate"
+
+# certificate Country
+cert_country: "RU"
+
+# email address
+cert_email_address: "testcase@domain.com"
+
+# locality
+cert_locality: "Saint-P"
+
+# target directory
+cert_dir: /tmp
+
+# Organizational Unit
+cert_organizational_unit: "LBRT.domain.com"
+
+# Organization
+cert_organization: "domain.com"
+
+# State
+cert_state: "OK"
+
+# password phrase
+cert_passphrase: "Show me what you got"
+
+# server name that will be utilizatiing the certificate (!)
+server_name: my_server
+
+# overwrite existing certificate files
+force_regeneration: False 
+
+
+
+
+

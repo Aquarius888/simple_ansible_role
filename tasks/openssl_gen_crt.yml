@@ -1,0 +1,15 @@
+---
+# create self-signed certificate
+# https://docs.ansible.com/ansible/latest/modules/openssl_certificate_module.html#openssl-certificate-module - module "openssl_certificate"
+
+- name: "Create certificate"
+  local_action:
+          module: openssl_certificate
+          csr_path: "{{ cert_dir }}/{{ server_name }}.csr"
+          force: "{{ force_regeneration }}"
+          path: "{{ cert_dir }}/{{ server_name }}.crt"
+          privatekey_passphrase: "{{ cert_passphrase }}"
+          privatekey_path: "{{ cert_dir }}/{{ server_name }}_private.key"
+          provider: "selfsigned"
+          selfsigned_digest: "sha256"
+          state: present
