@@ -12,18 +12,23 @@ pyopenssl is requred (pip install pyopenssl)
 
 ### Role Variables
 --------------
-- cert_common_name: certificate CN
+- cert_common_name: certificate Common Name (CN)
 - cert_country: certificate Country
-- cert_email_address: the email address used in certificate
+- client_cert_email_address: the email address used in client certificate
+- server_cert_email_address: the email address used in server certificate
+- ca_cert_email_address: the email address used in CA certificate
 - cert_locality: certificate Locality
 - cert_dir: the target directory that files will be output to
 - cert_organizational_unit: certificate Organizational Unit
+- client_cert_organizational_unit: certificate Organizational Unit client
+- server_cert_organizational_unit: certificate Organizational Unit server
+- ca_cert_organizational_unit: certificate Organizational Unit CA
 - cert_organization: certificate Organization
 - cert_state: certificate State
 - server_name: the name of the server (or otherwise) that will be utilizing the certificate
 - force_regeneration: overwrite existing certificate files
 - cert_passphrase: password phrase
-
+- root_ca_name: name of root CA
 
 Example Playbook
 ----------------
