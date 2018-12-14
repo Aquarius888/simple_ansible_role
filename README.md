@@ -29,7 +29,8 @@ Example Playbook
 ----------------
 see tests/test.yml
 
-```    - hosts: localhost
+```
+    - hosts: localhost
       tasks:
       - include_role:
           name: ca-role
@@ -48,7 +49,8 @@ Add this snippet to the top of your playbook.
 It will install python2 if missing (but checks first so no expensive repeated apt updates)
 
 
-``` - hosts: all
+```
+ - hosts: all
    gather_facts: False
    tasks:
    - name: install python 2
@@ -59,7 +61,8 @@ Centos7 core (TODO via Ansible)
 
 Need to install pip, pyopenssl
 
-``` yum install -y epel-release
+``` 
+ yum install -y epel-release
  yum install -y python-pip
  pip install pyopenssl
 ```
