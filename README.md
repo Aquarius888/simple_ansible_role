@@ -33,14 +33,15 @@ Example Playbook
 
 see tests/test.yml
 
-*    - hosts: localhost
-*      tasks:
-*      - include_role:
-*          name: ca-role
-*        vars:
-*          server_name: "server"
-*          client_name: "client"
-*          server_url: "test.com"
+```    - hosts: localhost
+      tasks:
+      - include_role:
+          name: ca-role
+        vars:
+          server_name: "server"
+          client_name: "client"
+          server_url: "test.com" 
+```
 
 ### Notes
 ---------
