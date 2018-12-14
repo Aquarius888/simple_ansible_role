@@ -1,16 +1,16 @@
 ---
-# Create root CA private key and crt
+# Create private key, certificate sign request (CSR) and self-signed certificate
 # https://docs.ansible.com/ansible/latest/modules/openssl_privatekey_module.html#openssl-privatekey-module - module "openssl_privatekey"
+# https://docs.ansible.com/ansible/latest/modules/openssl_certificate_module.html#openssl-certificate-module - module "openssl_certificate"
 # https://docs.ansible.com/ansible/latest/modules/openssl_csr_module.html#openssl-csr-module - module "openssl_csr"
 
-
-- name: "Create root CA key"
+- name: "Create server private key"
   # local_action:
   # module: openssl_privatekey
   openssl_privatekey:
           force: "{{ force_regeneration }}"
           mode: 0640
-          path: "{{ cert_dir }}/{{ root_ca_name }}.key"
+          path: "{{ cert_dir }}/{{ server_name }}_private.key"
           size: 2048
           state: present
           type: "RSA"
@@ -21,28 +21,29 @@
   openssl_csr:
           common_name: "{{ server_url }}"
           country_name: "{{ cert_country }}"
-          email_address: "{{ cert_email_address }}"
+          email_address: "{{ server_cert_email_address }}"
           force: "{{ force_regeneration }}"
           locality_name: "{{ cert_locality }}"
           mode: 0640
           organization_name: "{{ cert_organization }}"
-          organizational_unit_name: "{{ cert_organizational_unit }}"
-          path: "{{ cert_dir }}/{{ root_ca_name }}.csr"
+          organizational_unit_name: "{{ server_cert_organizational_unit }}"
+          path: "{{ cert_dir }}/{{ server_name }}.csr"
           privatekey_passphrase: "{{ cert_passphrase }}"
-          privatekey_path: "{{ cert_dir }}/{{ root_ca_name }}.key"
+          privatekey_path: "{{ cert_dir }}/{{ server_name }}_private.key"
           state: present
           state_or_province_name: "{{ cert_state }}"
 
-- name: "Create root CA certificate"
+- name: "Create self-signed certificate"
   # local_action:
   # module: openssl_certificate
   openssl_certificate:
-          privatekey_path: "{{ cert_dir }}/{{ root_ca_name }}.key"
-          csr_path: "{{ cert_dir }}/{{ root_ca_name }}.csr"
+          csr_path: "{{ cert_dir }}/{{ server_name }}.csr"
+          privatekey_path: "{{ cert_dir }}/{{ server_name }}_private.key"
+          ownca_path: "{{ cert_dir }}/{{ root_ca_name }}.crt"
+          ownca_privatekey_path: "{{ cert_dir }}/{{ root_ca_name }}.key"
           force: "{{ force_regeneration }}"
-          path: "{{ cert_dir }}/{{ root_ca_name }}.crt"
+          path: "{{ cert_dir }}/{{ server_name }}.crt"
           privatekey_passphrase: "{{ cert_passphrase }}"
-          provider: "selfsigned"
+          provider: "ownca"
           selfsigned_digest: "sha256"
           state: present
-          

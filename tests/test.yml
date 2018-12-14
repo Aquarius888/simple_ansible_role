@@ -3,5 +3,6 @@
   - include_role:
       name: ca-role
     vars:
-      server_name: "test_server"
+      server_name: "centostest"
+      client_name: "clienttest"
       server_url: "test.com"

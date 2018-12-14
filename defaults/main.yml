@@ -10,7 +10,9 @@ cert_common_name: "Default certificate"
 cert_country: "RU"
 
 # email address
-cert_email_address: "testcase@domain.com"
+client_cert_email_address: "client@test.com"
+server_cert_email_address: "server@test.com"
+ca_cert_email_address: "ca@test.com"
 
 # locality
 cert_locality: "Saint-P"
@@ -19,7 +21,9 @@ cert_locality: "Saint-P"
 cert_dir: /tmp/ca_cert
 
 # Organizational Unit
-cert_organizational_unit: "LBRT.domain.com"
+client_cert_organizational_unit: "client.test.com"
+server_cert_organizational_unit: "server.test.com"
+ca_cert_organizational_unit: "CA"
 
 # Organization
 cert_organization: "domain.com"
@@ -31,11 +35,10 @@ cert_state: "OK"
 cert_passphrase: "Show me what you got"
 
 # server name that will be utilizatiing the certificate (!)
-server_name: my_server
+server_name: centostest
 
 # overwrite existing certificate files
 force_regeneration: True 
-
 
 # name of root CA
 root_ca_name: rootCA
