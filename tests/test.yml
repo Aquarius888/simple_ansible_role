@@ -1,0 +1,7 @@
+- hosts: localhost
+  tasks:
+  - include_role:
+      name: ca-role
+    vars:
+      server_name: "test_server"
+      server_url: "test.com"

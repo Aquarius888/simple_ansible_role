@@ -16,7 +16,7 @@ cert_email_address: "testcase@domain.com"
 cert_locality: "Saint-P"
 
 # target directory
-cert_dir: /tmp
+cert_dir: /tmp/ca_cert
 
 # Organizational Unit
 cert_organizational_unit: "LBRT.domain.com"
@@ -37,6 +37,7 @@ server_name: my_server
 force_regeneration: True 
 
 
-
+# name of root CA
+root_ca_name: rootCA
 
 
