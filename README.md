@@ -31,32 +31,36 @@ pyopenssl is requred (pip install pyopenssl)
 Example Playbook
 ----------------
 
-    - hosts: localhost
-      tasks:
-      - include_role:
-          name: ca-role
-        vars:
-          server_name: "test_server"
-          server_url: "test.com"
+see tests/test.yml
+
+*    - hosts: localhost
+*      tasks:
+*      - include_role:
+*          name: ca-role
+*        vars:
+*          server_name: "server"
+*          client_name: "client"
+*          server_url: "test.com"
 
 ### Notes
 ---------
 
 Ubuntu16.04 core
+
 Add this snippet to the top of your playbook. 
 It will install python2 if missing (but checks first so no expensive repeated apt updates)
 
 
-- hosts: all
-  gather_facts: False
-  
-  tasks:
-  - name: install python 2
-    raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+* - hosts: all
+*   gather_facts: False
+*   tasks:
+*   - name: install python 2
+*     raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
 
 Centos7 core (TODO via Ansible)
+
 Need to install pip, pyopenssl
 
-yum install -y epel-release
-yum install -y python-pip
-pip install pyopenssl
+* yum install -y epel-release
+* yum install -y python-pip
+* pip install pyopenssl
