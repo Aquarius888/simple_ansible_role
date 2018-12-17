@@ -37,9 +37,12 @@ galaxy_info:
   # https://galaxy.ansible.com/api/v1/platforms/
   #
   platforms:
-   - name: centos
-     versions:
-      - 7
+          - name: opensuse 
+            versions:
+                    - Tumbleweed
+  # - name: Centos
+  #   versions:
+  #    - 7
   #   - 25
   # - name: SomePlatform
   #   versions:
