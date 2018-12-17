@@ -39,10 +39,10 @@ galaxy_info:
   platforms:
           - name: opensuse 
             versions:
-                    - Tumbleweed
-  # - name: Centos
-  #   versions:
-  #    - 7
+                    - 15.0
+          - name: EL
+            versions:
+                    - 7
   #   - 25
   # - name: SomePlatform
   #   versions:
