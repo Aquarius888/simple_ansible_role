@@ -5,7 +5,7 @@
 # https://docs.ansible.com/ansible/latest/modules/openssl_csr_module.html#openssl-csr-module - module "openssl_csr"
 
 - name: "Create server private key"
-  # local_action:
+  # delegate_to: localhost 
   # module: openssl_privatekey
   openssl_privatekey:
           force: "{{ force_regeneration }}"
@@ -15,8 +15,8 @@
           state: present
           type: "RSA"
 
-- name: "Create CSR request"
-  # local_action:
+- name: "Create CSR request" 
+  # delegate_to: localhost 
   # module: openssl_csr
   openssl_csr:
           common_name: "{{ server_url }}"
@@ -33,8 +33,8 @@
           state: present
           state_or_province_name: "{{ cert_state }}"
 
-- name: "Create self-signed certificate"
-  # local_action:
+- name: "Create self-signed certificate" 
+  # delegate_to: localhost 
   # module: openssl_certificate
   openssl_certificate:
           csr_path: "{{ cert_dir }}/{{ client_name }}.csr"

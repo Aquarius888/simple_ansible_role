@@ -1,7 +1,7 @@
 # Check for directory to write out certs
 
 - name: "Check directory"
-  #local_action:
+  #delegate_to: localhost
   # module: file
   file:
         path: "{{ cert_dir }}"
