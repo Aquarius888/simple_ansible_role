@@ -32,7 +32,9 @@ cert_organization: "domain.com"
 cert_state: "OK"
 
 # password phrase
-cert_passphrase: "Show me what you got"
+ca_cert_passphrase: "Show me what you got"
+server_cert_passphrase: "Server me what you got"
+client_cert_passphrase: "Client me what you got"
 
 # server name that will be utilizatiing the certificate (!)
 server_name: centostest

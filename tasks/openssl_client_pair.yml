@@ -9,7 +9,7 @@
   # module: openssl_privatekey
   openssl_privatekey:
           force: "{{ force_regeneration }}"
-          mode: 0640
+          mode: 0440
           path: "{{ cert_dir }}/{{ client_name }}_private.key"
           size: 2048
           state: present
@@ -24,11 +24,11 @@
           email_address: "{{ client_cert_email_address }}"
           force: "{{ force_regeneration }}"
           locality_name: "{{ cert_locality }}"
-          mode: 0640
+          mode: 0440
           organization_name: "{{ cert_organization }}"
           organizational_unit_name: "{{ client_cert_organizational_unit }}"
           path: "{{ cert_dir }}/{{ client_name }}.csr"
-          privatekey_passphrase: "{{ cert_passphrase }}"
+          privatekey_passphrase: "{{ client_cert_passphrase }}"
           privatekey_path: "{{ cert_dir }}/{{ client_name }}_private.key"
           state: present
           state_or_province_name: "{{ cert_state }}"
@@ -43,7 +43,7 @@
           ownca_privatekey_path: "{{ cert_dir }}/{{ root_ca_name }}.key"
           force: "{{ force_regeneration }}"
           path: "{{ cert_dir }}/{{ client_name }}.crt"
-          privatekey_passphrase: "{{ cert_passphrase }}"
+          privatekey_passphrase: "{{ client_cert_passphrase }}"
           provider: "ownca"
           selfsigned_digest: "sha256"
           state: present
