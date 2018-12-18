@@ -71,3 +71,8 @@ Need to install pip, pyopenssl
  yum install -y python-pip
  pip install pyopenssl
 ```
+
+### TODO
+----------
+
+Write Dockerfile: Centos7-base, python2, pyopenssl-17.5.0, ansible-2.7 - versions defense
