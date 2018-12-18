@@ -1,1 +1,1 @@
-pyopenssl
+pyopenssl=17.5.0
